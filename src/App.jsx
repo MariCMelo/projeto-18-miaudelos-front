@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import SigninPage from "./pages/SigninPage";
+import SignupPage from "./pages/SignupPage";
 
 export default function App() {
 
@@ -9,6 +10,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
         <Route path="/" element={<SigninPage />} />
+        <Route path="/register" element={<SignupPage />} />
         </Routes>
       </BrowserRouter>
     </PagesContainer>
