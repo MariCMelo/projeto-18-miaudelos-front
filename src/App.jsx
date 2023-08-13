@@ -12,7 +12,7 @@ export default function App() {
         <Routes>
         <Route path="/" element={<SigninPage />} />
         <Route path="/register" element={<SignupPage />} />
-        <Route path="/galeria" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
     </PagesContainer>
