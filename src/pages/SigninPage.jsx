@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "/catPaw.png";
+import Logo from "/miaudelos.png";
 import axios from "axios";
 
 export default function SigninPage() {
@@ -21,8 +21,7 @@ export default function SigninPage() {
           password,
         }
       );
-      console.log("olá");
-      console.log(response);
+  
       const { token, userId } = response.data;
 
       localStorage.setItem("token", token);
@@ -57,17 +56,14 @@ export default function SigninPage() {
     <SigninContainer>
       <form onSubmit={handleLogin}>
         <LogoImage src={Logo} alt="Logo" />
-        <h1> Miaudelos</h1>
         <input
           placeholder="E-mail"
-          data-test="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           placeholder="Senha"
-          data-test="password"
           type="password"
           autoComplete="new-password"
           value={password}
@@ -87,12 +83,12 @@ const SigninContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ff95d3;
+  background-color: #f5c3e0;
 `;
 
 const LogoImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 170px;
   margin-bottom: 10px;
   transition: transform 0.3s ease;
 

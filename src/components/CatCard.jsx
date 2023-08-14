@@ -1,20 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import Logo from "/catPaw.png";
+import { useNavigate } from "react-router-dom";
 
 const CatCard = ({ cat }) => {
+  const navigate = useNavigate();
+
+  const handleCatClick = () => {
+    navigate(`/gato/${cat.id}`);
+  };
+
+
   return (
-    <Card>
+    <Card onClick={handleCatClick}>
       <ImageContainer src={cat.photo} alt={cat.name} />
       <CatName>{cat.name}</CatName>
       <CatInfoContainer>
-        <CatInfo>
-          <List>
-            <li>Idade: {cat.age}</li>
-            <li>Cor: {cat.color}</li>
-            <li>Raça: {cat.breed}</li>
-          </List>
-        </CatInfo>
+       
         <>
           <StatusText status={cat.status}>
             <CatStatus src={Logo} alt={cat.name} status={cat.status} />
@@ -28,10 +30,11 @@ const CatCard = ({ cat }) => {
 
 const CatInfoContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-top: 20px;
   align-items: center;
   justify-content: space-between;
-  width: 100%
+  width: 100%;
 `;
 
 const Card = styled.div`
@@ -54,26 +57,16 @@ const ImageContainer = styled.img`
   cursor: pointer;
   border-radius: 10px;
 `;
-const CatInfo = styled.div`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-`;
 
-const List = styled.ul`
-  list-style: none; 
-  padding: 0;
-  margin: 0;
-  text-align: center;
-`;
+
+
 const CatName = styled.h2`
   font-weight: bold;
 `;
 
 const CatStatus = styled.img`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
   width: 70px;
   height: 70px;
   object-fit: cover;

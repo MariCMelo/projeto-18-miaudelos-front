@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Logo from "/catPaw.png";
+import Logo from "/miaudelos.png";
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -69,7 +69,6 @@ export default function SignupPage() {
   return (
     <SignupContainer>
       <LogoImage src={Logo} alt="Logo" />
-      <h1> Miaudelos</h1>
       <form onSubmit={handleSignUpSubmit}>
         <input
           placeholder="Nome"
@@ -125,12 +124,12 @@ const SignupContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ff95d3;
+  background-color: #f5c3e0;;
 `;
 
 const LogoImage = styled.img`
-  width: 100px;
-  height: 100px;
+   width: 230px;
+  height: 200px;
   margin-bottom: 10px;
   transition: transform 0.3s ease;
 
